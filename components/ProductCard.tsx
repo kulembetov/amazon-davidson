@@ -42,7 +42,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <Typography variant="h2" sx={{ fontWeight: 500, color: COLORS.black }}>
           {(product.title ?? "No title").substring(0, 15)}...
         </Typography>
-        <Ratings rating={product.rating}></Ratings>
+        <Ratings rating={product.rating ?? { rate: 0, count: 0 }}></Ratings>
         <Typography variant="h2" sx={{ fontWeight: 700, color: COLORS.black }}>
           ${product.price}
         </Typography>

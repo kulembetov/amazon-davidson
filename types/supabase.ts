@@ -6,6 +6,11 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[];
 
+export type RatingJson = {
+  rate: number;
+  count: number;
+};
+
 export type Database = {
   public: {
     Tables: {
@@ -17,7 +22,7 @@ export type Database = {
           id: number;
           image: string | null;
           price: number | null;
-          rating: Json | null;
+          rating: RatingJson | null;
           title: string | null;
         };
         Insert: {
@@ -27,7 +32,7 @@ export type Database = {
           id?: number;
           image?: string | null;
           price?: number | null;
-          rating?: Json | null;
+          rating?: RatingJson | null;
           title?: string | null;
         };
         Update: {
@@ -37,7 +42,7 @@ export type Database = {
           id?: number;
           image?: string | null;
           price?: number | null;
-          rating?: Json | null;
+          rating?: RatingJson | null;
           title?: string | null;
         };
         Relationships: [];
