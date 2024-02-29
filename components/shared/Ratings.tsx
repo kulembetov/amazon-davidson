@@ -25,12 +25,13 @@ const Ratings = ({ rating }: { rating: { rate: number; count: number } }) => {
       <Typography
         variant="h2"
         sx={{
+          fontSize: "1rem",
           fontWeight: 500,
           color: COLORS.teal,
           "&:hover": { color: COLORS.orange },
         }}
       >
-        {rating.count}
+        {rating.count} ratings
       </Typography>
     </Box>
   );

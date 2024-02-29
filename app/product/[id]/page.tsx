@@ -12,14 +12,12 @@ const ProductPage = () => {
 
   const { id } = useParams();
 
-  console.log(singleProduct);
-
   useEffect(() => {
     getSingleProduct(Number(id));
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: COLORS.white }}>
+    <Box sx={{ backgroundColor: COLORS.white, borderRadius: "5px" }}>
       <Container maxWidth="xl">
         <ProductDetails product={singleProduct} />
       </Container>

@@ -148,3 +148,16 @@ export type Products = Tables<"products">;
 export type Product = Database["public"]["Tables"]["products"]["Row"];
 
 export type rating = Product["rating"];
+
+export interface CartProduct extends Product {
+  cartItemId?: string; // Use optional if it's not guaranteed every product will have this
+}
+
+export interface CartItem extends Product {
+  cartItemId: string;
+  quantity: number;
+}
+
+export interface CartState {
+  cart: CartItem[];
+}

@@ -28,6 +28,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         flexDirection: "column",
         justifyContent: "space-between",
         cursor: "pointer",
+        borderRadius: "5px",
       }}
       onClick={selectProduct}
     >

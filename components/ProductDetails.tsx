@@ -15,24 +15,28 @@ import { getRandomNumber } from "@/utils";
 import InStockText from "@/components/shared/InStockText";
 import CustomButton from "@/components/shared/CustomButton";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/store/cartSlice";
+
+const StyledLink = styled.a`
+  color: ${COLORS.teal};
+
+  &:hover {
+    color: ${COLORS.caribbean};
+  }
+`;
 
 const ProductDetails = ({ product }: { product: Product[] }) => {
   const [hours, setHours] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setHours(getRandomNumber(24));
     setMinutes(getRandomNumber(60));
   }, []);
 
-  const StyledLink = styled.a`
-    color: ${COLORS.teal};
-
-    &:hover {
-      color: ${COLORS.caribbean};
-    }
-  `;
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
       {product.map((prod: any) => {
@@ -50,7 +54,8 @@ const ProductDetails = ({ product }: { product: Product[] }) => {
               alt={prod.title!}
               width={500}
               height={600}
-              style={{ marginRight: "8rem" }}
+              style={{ width: "auto", height: "auto", marginRight: "8rem" }}
+              priority
             />
             <Box>
               <Typography variant="h1">{prod.title}</Typography>
@@ -84,9 +89,10 @@ const ProductDetails = ({ product }: { product: Product[] }) => {
                   moves & TV shows with Prime.
                 </Typography>
                 <Typography>
-                  <Link href="/" passHref style={{ textDecoration: "none" }}>
-                    <StyledLink>Try Prime</StyledLink>
-                  </Link>{" "}
+                  <StyledLink
+                    href="/"
+                    style={{ textDecoration: "none" }}
+                  ></StyledLink>
                   and start saving today with{" "}
                   <span style={{ fontWeight: 700 }}>fast, free delivery</span>
                 </Typography>
@@ -122,7 +128,12 @@ const ProductDetails = ({ product }: { product: Product[] }) => {
                   <ProductLinkText>Delivery to New York, 10001</ProductLinkText>
                 </Typography>
                 <InStockText />
-                <CustomButton onClick={() => router.push("/cart")}>
+                <CustomButton
+                  onClick={() => {
+                    dispatch(addToCart(prod));
+                    router.push("/cart");
+                  }}
+                >
                   Add to Cart
                 </CustomButton>
                 <CustomButton

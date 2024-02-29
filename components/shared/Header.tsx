@@ -7,6 +7,7 @@ import HeaderLink from "@/components/shared/HeaderLink";
 import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
+import Link from "next/link";
 
 const Header = () => {
   const linkList = [
@@ -48,8 +49,8 @@ const Header = () => {
         <SearchBar />
         <Box sx={{ display: "flex" }}>
           <HeaderLink href="/orders">
-            <Typography sx={{ fontSize: "0.75rem" }}>Returns</Typography>
-            <Typography sx={{ fontWeight: 700, fontSize: "1rem" }}>
+            <Typography sx={{ fontSize: "0.8rem" }}>Returns</Typography>
+            <Typography sx={{ fontWeight: 700, fontSize: "0.9rem" }}>
               & Orders
             </Typography>
           </HeaderLink>
@@ -58,7 +59,7 @@ const Header = () => {
             style={{ display: "flex", alignItems: "flex-end" }}
           >
             <ShoppingCartIcon fontSize="large" />
-            <Typography sx={{ fontSize: "1rem", fontWeight: 700 }}>
+            <Typography sx={{ fontSize: "0.8rem", fontWeight: 700 }}>
               Cart
             </Typography>
           </HeaderLink>

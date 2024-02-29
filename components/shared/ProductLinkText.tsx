@@ -9,7 +9,11 @@ const ProductLinkText = ({
   style?: React.CSSProperties;
 }) => {
   return (
-    <span style={{ color: COLORS.teal, fontSize: "0.875rem" }}>{children}</span>
+    <span
+      style={{ color: COLORS.teal, fontSize: "0.875rem", cursor: "pointer" }}
+    >
+      {children}
+    </span>
   );
 };
 
