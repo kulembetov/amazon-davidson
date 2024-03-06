@@ -1,6 +1,8 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { COLORS } from "@/styles/colors";
+import Link from "next/link";
+import { UrlObject } from "node:url";
 
 const ProductLinkText = ({
   children,
@@ -9,11 +11,17 @@ const ProductLinkText = ({
   style?: React.CSSProperties;
 }) => {
   return (
-    <span
-      style={{ color: COLORS.teal, fontSize: "0.875rem", cursor: "pointer" }}
+    <Link
+      href="/"
+      style={{
+        color: COLORS.teal,
+        fontSize: "0.875rem",
+        cursor: "pointer",
+        textDecoration: "none",
+      }}
     >
       {children}
-    </span>
+    </Link>
   );
 };
 

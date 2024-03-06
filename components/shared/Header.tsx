@@ -8,8 +8,9 @@ import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-const Header = () => {
+const Header = ({ hide }: { hide?: boolean }) => {
   const linkList = [
     "Medical Care",
     "Groceries",
@@ -28,6 +29,10 @@ const Header = () => {
     "Fashion",
     "Luxury Stores",
   ];
+
+  if (hide) {
+    return null;
+  }
 
   return (
     <Box

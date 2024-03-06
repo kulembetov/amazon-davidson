@@ -8,6 +8,7 @@ import { COLORS } from "@/styles/colors";
 import Header from "@/components/shared/Header";
 import React from "react";
 import Provider from "@/components/shared/Provider";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,10 +30,7 @@ export default function RootLayout({
       >
         <Provider>
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-            <ThemeProvider theme={theme}>
-              <Header />
-              {children}
-            </ThemeProvider>
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
           </AppRouterCacheProvider>
         </Provider>
       </body>

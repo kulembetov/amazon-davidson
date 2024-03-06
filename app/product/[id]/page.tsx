@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import { Container } from "@mui/material";
 import { COLORS } from "@/styles/colors";
 import ProductDetails from "@/components/ProductDetails";
+import Header from "@/components/shared/Header";
 
 const ProductPage = () => {
   const { singleProduct, getSingleProduct } = useSupabase();
@@ -17,11 +18,14 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: COLORS.white, borderRadius: "5px" }}>
-      <Container maxWidth="xl">
-        <ProductDetails product={singleProduct} />
-      </Container>
-    </Box>
+    <>
+      <Header />
+      <Box sx={{ backgroundColor: COLORS.white, borderRadius: "5px" }}>
+        <Container maxWidth="xl">
+          <ProductDetails product={singleProduct} />
+        </Container>
+      </Box>
+    </>
   );
 };
 

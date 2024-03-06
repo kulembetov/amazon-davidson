@@ -42,12 +42,12 @@ const ProductDetails = ({ product }: { product: Product[] }) => {
       {product.map((prod: any) => {
         return (
           <Box
+            key={prod.id}
             sx={{
               display: "flex",
               justifyContent: "space-between",
               padding: "5rem 0",
             }}
-            key={prod.id}
           >
             <Image
               src={prod.image!}

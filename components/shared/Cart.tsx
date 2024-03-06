@@ -21,8 +21,6 @@ const Cart = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
 
-  // const totalPrice = cart.reduce((total, item) => total + (item.price || 0), 0);
-
   let total = 0;
   cart.forEach((item: Product) => (total = total + item.price!));
 
