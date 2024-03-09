@@ -15,8 +15,10 @@ import { useAppSelector } from "@/hooks/redux";
 import { getCart } from "@/store/cartSlice";
 import { Product } from "@/types/supabase";
 import OrderSummary from "@/components/OrderSummmary";
+import { useRouter } from "next/navigation";
 
 const Checkout = () => {
+  const router = useRouter();
   const cart = useAppSelector(getCart);
 
   let subtotal = 0;
@@ -67,7 +69,7 @@ const Checkout = () => {
             <CustomBox sx={{ display: "flex", marginLeft: "3.5rem" }}>
               <CustomButton
                 sx={{ width: "15rem", marginRight: "1rem" }}
-                onClick={() => console.log("clicked")}
+                onClick={() => router.push("/orders")}
               >
                 Place Your Order
               </CustomButton>

@@ -7,6 +7,7 @@ import ProductLinkText from "@/components/shared/ProductLinkText";
 import Box from "@mui/material/Box";
 import OrderTotal from "@/components/shared/OrderTotal";
 import { COLORS } from "@/styles/colors";
+import { useRouter } from "next/navigation";
 
 const OrderSummary = ({
   subtotal,
@@ -19,6 +20,7 @@ const OrderSummary = ({
   shipping: number;
   total: number;
 }) => {
+  const router = useRouter();
   const summaryValues = [
     { title: `Subtotal (1 items)`, value: `$${subtotal.toFixed(2)}` },
     { title: `Shipping & handling`, value: `$${shipping.toFixed(2)}` },
@@ -41,7 +43,7 @@ const OrderSummary = ({
 
   return (
     <CustomBox sx={{ width: "17vw", marginLeft: "2rem", height: "80.5vh" }}>
-      <CustomButton onClick={() => console.log("clicked")}>
+      <CustomButton onClick={() => router.push("/orders")}>
         Place Your Order
       </CustomButton>
       <Typography sx={{ textAlign: "center" }}>
@@ -75,7 +77,7 @@ const OrderSummary = ({
         sx={{
           backgroundColor: COLORS.lightGray,
           padding: "1rem",
-          borderRadius: "3px",
+          borderRadius: "5px",
         }}
       >
         <ProductLinkText>How are shipping costs calculated?</ProductLinkText>

@@ -54,7 +54,7 @@ const ProductDetails = ({ product }: { product: Product[] }) => {
               alt={prod.title!}
               width={500}
               height={600}
-              style={{ width: "auto", height: "auto", marginRight: "8rem" }}
+              style={{ marginRight: "8rem" }}
               priority
             />
             <Box>

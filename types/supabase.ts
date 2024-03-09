@@ -153,6 +153,15 @@ export interface CartProduct extends Product {
   cartItemId?: string; // Use optional if it's not guaranteed every product will have this
 }
 
+// export interface OrderItem extends Product {
+//   ordersItemId?: string;
+//   quantity: number;
+// }
+//
+// export interface OrdersState {
+//   orders: OrderItem[];
+// }
+
 export interface CartItem extends Product {
   cartItemId: string;
   quantity: number;

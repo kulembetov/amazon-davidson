@@ -34,9 +34,7 @@ const DeliveryOptions = () => {
               <Typography
                 sx={{
                   marginLeft: "2rem",
-                  lineHeight: 0.25,
-                  marginBottom: "0.25rem",
-                  textWrap: "nowrap",
+                  lineHeight: 0.9,
                 }}
               >
                 {option.price}
